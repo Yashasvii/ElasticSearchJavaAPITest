@@ -24,14 +24,16 @@ public class Main {
 //        GetContent getContent= new GetContent();
 //        getContent.getContent("contactmanager","people","1","src/main/resources/output/output.json");
 
-        IndexDocument indexDocument= new IndexDocument();
-        indexDocument.indexDocument("tt","aa","2","src/main/resources/input/indexdocument.json");
+//        IndexDocument indexDocument= new IndexDocument();
+//        indexDocument.indexDocument("tt","aa","5","src/main/resources/input/indexdocument.json");
 
        // DeleteDocument deleteDocument= new DeleteDocument();
       //  deleteDocument.DeleteDocument("twitter","tweet","1");
 
      //   UpdateValue updateValue= new UpdateValue();
      //   updateValue.updateValue("contactmanager","people","1","fname","rabii");
+
+
 
 
 
