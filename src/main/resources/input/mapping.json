@@ -1,0 +1,21 @@
+{
+  "location": {
+    "properties": {
+      "uid": {
+        "type": "string"
+      },
+      "date": {
+        "type": "date"
+      },
+      "city": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      },
+      "memId": {
+        "type": "string"
+      }
+    }
+  }
+}
