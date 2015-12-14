@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class MapIndex {
     private final Logger logger = Logger.getLogger(MapIndex.class.getName());
 
-    public  void mapIndex(String index, String type, String path) {
+    public void mapIndex(String index, String type, String path) {
         try {
             JSONParser jsonParser = new JSONParser();
             FileReader fileReader = new FileReader(path);

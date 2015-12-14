@@ -15,7 +15,7 @@ public class CreateIndex {
         try {
             CreateIndexRequestBuilder createIndexRequestBuilder = CreateClient.getClient().admin().indices().prepareCreate(indexName);
             CreateIndexResponse response = createIndexRequestBuilder.execute().actionGet();
-            System.out.println("index creation is "+response.isAcknowledged());
+            System.out.println("index creation is " + response.isAcknowledged());
         } catch (Exception ex) {
             logger.log(Level.INFO, "Index " + indexName + " already exists. Hence cannot be created.");
         }

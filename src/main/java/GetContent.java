@@ -1,7 +1,11 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.elasticsearch.action.get.GetResponse;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,12 +18,24 @@ public class GetContent {
     //GET /twitter/tweet/1
     public void getContent(String index, String type, String id, String path) {
         try {
+
             GetResponse response = CreateClient.getClient().prepareGet(index, type, id)
                     .execute()
                     .actionGet();
 
+
+
+
             FileWriter fileWriter = new FileWriter(path);
-            fileWriter.write(response.getSource().toString());
+            ObjectMapper objectMapper = new ObjectMapper();
+            Object json = objectMapper.readValue(response.getSourceAsString(), Object.class);
+
+
+            String output = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+
+            logger.log(Level.INFO, output);
+
+            fileWriter.write(output);
             fileWriter.close();
         } catch (Exception e) {
             logger.log(Level.INFO, e.toString());

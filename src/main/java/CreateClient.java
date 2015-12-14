@@ -22,12 +22,12 @@ public class CreateClient {
                     .put("cluster.name", "es_yrpant").build();
             client = new TransportClient(settings);
             client.addTransportAddress(new InetSocketTransportAddress("localhost", 9300));
-            System.out.println("connected");
+            logger.log(Level.INFO, "created client");
         } catch (Exception ex) {
             logger.log(Level.SEVERE, "Error creating client");
 
         }
-        return  client;
+        return client;
 
     }
 

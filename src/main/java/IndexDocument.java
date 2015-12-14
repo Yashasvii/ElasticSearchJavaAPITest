@@ -15,13 +15,13 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 public class IndexDocument {
     private final Logger logger = Logger.getLogger(IndexDocument.class.getName());
 
-    public  void indexDocument(String index, String type, String id, String path) {
+    public void indexDocument(String index, String type, String id, String path) {
         try {
             JSONParser jsonParser = new JSONParser();
             FileReader fileReader = new FileReader(path);
             JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
             String json = jsonObject.toString();
-            IndexResponse response = CreateClient.getClient().prepareIndex(index, type,id)
+            IndexResponse response = CreateClient.getClient().prepareIndex(index, type, id)
                     .setSource(json)
                     .execute()
                     .actionGet();
