@@ -3,6 +3,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
@@ -21,8 +23,8 @@ public class Main {
 //       MapIndex mapIndex= new MapIndex();
 //        mapIndex.mapIndex("zz1","location","src/main/resources/input/mapping.json");
 //
-        GetContent getContent = new GetContent();
-       getContent.getContent("bank", "account", "1", "src/main/resources/output/output.json");
+//        GetContent getContent = new GetContent();
+//       getContent.getContent("bank", "account", "1");
 
 //        IndexDocument indexDocument= new IndexDocument();
 //        indexDocument.indexDocument("tt","aa","5","src/main/resources/input/indexdocument.json");
@@ -45,6 +47,11 @@ public class Main {
 
 //        GetCount getCount= new GetCount();
 //        getCount.getCount("contactmanager","people");
+
+//              BulkProcessing bulkProcessing= new BulkProcessing();
+//              bulkProcessing.bulkDataInsertion("zzz","aa",50);
+
+
 
     }
 

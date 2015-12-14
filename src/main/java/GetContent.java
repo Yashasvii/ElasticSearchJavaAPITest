@@ -16,7 +16,7 @@ public class GetContent {
     private final Logger logger = Logger.getLogger(CreateIndex.class.getName());
 
     //GET /twitter/tweet/1
-    public void getContent(String index, String type, String id, String path) {
+    public void getContent(String index, String type, String id) {
         try {
 
             GetResponse response = CreateClient.getClient().prepareGet(index, type, id)
@@ -26,7 +26,7 @@ public class GetContent {
 
 
 
-            FileWriter fileWriter = new FileWriter(path);
+            FileWriter fileWriter = new FileWriter("src/main/resources/output/"+index+"-"+type+"-"+id+".json");
             ObjectMapper objectMapper = new ObjectMapper();
             Object json = objectMapper.readValue(response.getSourceAsString(), Object.class);
 
