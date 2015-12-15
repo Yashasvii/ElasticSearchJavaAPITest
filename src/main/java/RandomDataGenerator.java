@@ -17,10 +17,10 @@ public class RandomDataGenerator {
     Date minDate = dataFactory.getDate(2013, 1, 1);
 
     Date maxDate = dataFactory.getDate(2017, 1, 1);
-    int type;
+    int indicator;
 
     RandomDataGenerator() {
-        this.type = this.generateNumber();
+        this.indicator = this.generateNumber();
     }
 
     public String generateUserName() {
@@ -57,7 +57,7 @@ public class RandomDataGenerator {
                 .field("message", generateMessage())
                 .endObject();*/
 
-        if (type >50) {
+        if (indicator >50) {
             jsonBuilt = XContentFactory.jsonBuilder()
                     .startObject()
                     .startObject("memberType")

@@ -1,3 +1,4 @@
+import org.elasticsearch.action.deletebyquery.DeleteByQueryResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
+import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 
 /**
  * Created by yrpant on 12/11/15.
@@ -29,20 +31,20 @@ public class Main {
 //        IndexDocument indexDocument= new IndexDocument();
 //        indexDocument.indexDocument("tt","aa","5","src/main/resources/input/indexdocument.json");
 
-        // DeleteDocument deleteDocument= new DeleteDocument();
+        // Delete deleteDocument= new DeleteDocument();
         //  deleteDocument.DeleteDocument("twitter","tweet","1");
 
         //   UpdateValue updateValue= new UpdateValue();
         //   updateValue.updateValue("contactmanager","people","1","fname","rabii");
 
-//        DeleteIndex deleteIndex= new DeleteIndex();
+//        Delete deleteIndex= new DeleteIndex();
 //        deleteIndex.deleteIndex("2100");
 
 
-//        SearchIndex searchIndex= new SearchIndex();
+//        SearchAPI searchIndex= new SearchAPI();
 //        searchIndex.searchIndex("2000");
 
-//        SearchFilters searchFilters= new SearchFilters();
+//        SearchAPI searchFilters= new SearchAPI();
 //        searchFilters.searchFilters("contactmanager","fname","shyam");
 
 //        GetCount getCount= new GetCount();
@@ -51,10 +53,20 @@ public class Main {
 //              BulkProcessing bulkProcessing= new BulkProcessing();
 //              bulkProcessing.bulkDataInsertion("zzz","aa",50);
 
+//
+//            Aggregations aggregations= new Aggregations();
+//            aggregations.aggregationsImplementation();
 
+//       Delete delete= new Delete();
+//        delete.deleteByQueryResponse("contactmanager","people");
+//    }
+
+        Aggregations aggregations = new Aggregations();
+       // aggregations.aggregationsImplementation();
+        //aggregations.averageAggregation();
+        aggregations.minimumAggregation();
 
     }
-
 }
 
 

@@ -41,9 +41,9 @@ public class GetContent {
             logger.log(Level.INFO, e.toString());
         }
     }
-//    public void getContent(String index, String type) {
+//    public void getContent(String index, String indicator) {
 //        try {
-//            GetResponse response = CreateClient.getClient().prepareGet(index, type)
+//            GetResponse response = CreateClient.getClient().prepareGet(index, indicator)
 //                    .execute()
 //                    .actionGet();
 //            System.out.println(response.getSource());

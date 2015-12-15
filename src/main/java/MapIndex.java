@@ -31,7 +31,7 @@ public class MapIndex {
                     createIndexRequestBuilder.execute().actionGet();
 //                PutMappingResponse putMappingResponse = this.getClient().admin().indices().prepareCreate(this.index)
 //                        .preparePutMapping(this.index)
-//                        .setType(this.type)
+//                        .setType(this.indicator)
 //                        .setSource(mapjson)
 //                        .execute().actionGet();
                 } else {
