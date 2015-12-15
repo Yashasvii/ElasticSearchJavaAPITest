@@ -53,18 +53,19 @@ public class Main {
 //        delete.deleteByQueryResponse("contactmanager","people");
 //    }
 
-//        Aggregations aggregations = new Aggregations();
+        Aggregations aggregations = new Aggregations();
 //       // aggregations.aggregationsImplementation();
 //        //aggregations.averageAggregation();
-//        aggregations.minimumAggregation();
+        aggregations.minimumAggregation("age",20);
 
 
 //        BulkProcessing bulkProcessing= new BulkProcessing();
 //        bulkProcessing.loadBulk("ban","account","accounts.json");
 
 
-
-
+        // get a number in the first argument
+//       AssertionClass assertionClass= new AssertionClass();
+//       assertionClass.test();
 
     }
 }
