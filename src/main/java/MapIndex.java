@@ -13,10 +13,10 @@ import java.util.logging.Logger;
 public class MapIndex {
     private final Logger logger = Logger.getLogger(MapIndex.class.getName());
 
-    public void mapIndex(String index, String type, String path) {
+    public void mapIndex(String index, String type, String fileName) {
         try {
             JSONParser jsonParser = new JSONParser();
-            FileReader fileReader = new FileReader(path);
+            FileReader fileReader = new FileReader("src/main/resources/input/"+fileName);
             JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
             String jsonMap = jsonObject.toString();
             fileReader.close();

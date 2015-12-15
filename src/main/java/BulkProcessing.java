@@ -1,7 +1,10 @@
+import org.elasticsearch.action.bulk.BulkItemRequest;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.common.io.ByteStreams;
 import org.json.simple.JSONObject;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,7 +32,7 @@ public class BulkProcessing {
         }
     }
 
-    public void bulkDataInsertion(String index,String type, int maxSize)
+    public void bulkRandomDataInsertion(String index,String type, int maxSize)
     {
 
         /* Bulk API test */
@@ -45,6 +48,21 @@ public class BulkProcessing {
             bulkProcessing.bulkOperationIndexing(index,type,data);
         } catch (Exception ex) {
             System.out.println(ex.toString());
+        }
+
+    }
+
+    public void loadBulk(String index, String type, String fileName) {
+//        System.out.println(String.format("Loading file %s into elasticsearch cluster", jsonPath));
+        try {
+
+            BulkRequestBuilder bulkBuilder = new BulkRequestBuilder(CreateClient.getClient());
+            byte[] buffer = ByteStreams.toByteArray(new FileInputStream("src/main/resources/input/"+fileName));
+            bulkBuilder.add(buffer, 0, buffer.length, true, index, type);
+            BulkResponse response = bulkBuilder.get();
+            System.out.println("Bulk Success");
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
 
     }

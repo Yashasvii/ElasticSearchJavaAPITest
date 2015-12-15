@@ -1,15 +1,6 @@
-import org.elasticsearch.action.deletebyquery.DeleteByQueryResponse;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
-import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
-import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 
 /**
  * Created by yrpant on 12/11/15.
@@ -23,13 +14,13 @@ public class Main {
 //        createIndex.createIndex("me");
 
 //       MapIndex mapIndex= new MapIndex();
-//        mapIndex.mapIndex("zz1","location","src/main/resources/input/mapping.json");
+//        mapIndex.mapIndex("zz1","location","mapping.json");
 //
 //        GetContent getContent = new GetContent();
 //       getContent.getContent("bank", "account", "1");
 
 //        IndexDocument indexDocument= new IndexDocument();
-//        indexDocument.indexDocument("tt","aa","5","src/main/resources/input/indexdocument.json");
+//        indexDocument.indexDocument("tt","aa","5","indexdocument.json");
 
         // Delete deleteDocument= new DeleteDocument();
         //  deleteDocument.DeleteDocument("twitter","tweet","1");
@@ -44,14 +35,15 @@ public class Main {
 //        SearchAPI searchIndex= new SearchAPI();
 //        searchIndex.searchIndex("2000");
 
+
 //        SearchAPI searchFilters= new SearchAPI();
 //        searchFilters.searchFilters("contactmanager","fname","shyam");
 
 //        GetCount getCount= new GetCount();
 //        getCount.getCount("contactmanager","people");
 
-//              BulkProcessing bulkProcessing= new BulkProcessing();
-//              bulkProcessing.bulkDataInsertion("zzz","aa",50);
+//            BulkProcessing bulkProcessing= new BulkProcessing();
+//        bulkProcessing.bulkRandomDataInsertion("zzz","aa",50);
 
 //
 //            Aggregations aggregations= new Aggregations();
@@ -61,10 +53,18 @@ public class Main {
 //        delete.deleteByQueryResponse("contactmanager","people");
 //    }
 
-        Aggregations aggregations = new Aggregations();
-       // aggregations.aggregationsImplementation();
-        //aggregations.averageAggregation();
-        aggregations.minimumAggregation();
+//        Aggregations aggregations = new Aggregations();
+//       // aggregations.aggregationsImplementation();
+//        //aggregations.averageAggregation();
+//        aggregations.minimumAggregation();
+
+
+//        BulkProcessing bulkProcessing= new BulkProcessing();
+//        bulkProcessing.loadBulk("ban","account","accounts.json");
+
+
+
+
 
     }
 }
