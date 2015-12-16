@@ -1,0 +1,17 @@
+{
+  "comparison" : {
+    "default" : {
+      "ageaverage" : 30.210719041278296
+    }
+  },
+  "percentageChange" : {
+    "default" : {
+      "ageaverage" : 0
+    }
+  },
+  "reporting" : {
+    "default" : {
+      "ageaverage" : 30.210719041278296
+    }
+  }
+}

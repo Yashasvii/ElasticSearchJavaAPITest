@@ -62,11 +62,11 @@ public class Main {
 
   //  aggregations.aggregationsImplementation();
 
-   aggregations.averageAggregation("age","observer1.json");
+   aggregations.averageAggregation("ageaverage","age","testoutput1.json");
 // //aggregations.averageAggregation("contactmanager","age",20);
 
 
-      aggregations.minimumAggregation("age",25,"observer1.json");
+     //aggregations.minimumAggregation("age",25,"observer1.json");
 
 
      //  aggregations.maximumAggregation("age",70);

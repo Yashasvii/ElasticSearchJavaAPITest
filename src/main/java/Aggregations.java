@@ -39,7 +39,7 @@ public class Aggregations {
                 "  }\n" +
                 "}";
     }
-        private void builderJSON(String fieldTerm, String fieldName, double actualValue, String outputFile)
+        private void builderJSON(String fieldTerm, double actualValue, String outputFile)
 
     {
         try {
@@ -48,16 +48,16 @@ public class Aggregations {
 
             JSONObject jsonObject1 = (JSONObject) jsonObject.get("comparison");
             JSONObject jsonObject2 = (JSONObject) jsonObject1.get("default");
-            jsonObject2.put(fieldTerm + fieldName, actualValue);
+            jsonObject2.put(fieldTerm , actualValue);
 
 
             JSONObject jsonObject3 = (JSONObject) jsonObject.get("reporting");
             JSONObject jsonObject4 = (JSONObject) jsonObject3.get("default");
-            jsonObject4.put(fieldTerm + fieldName, actualValue);
+            jsonObject4.put(fieldTerm, actualValue);
 
             JSONObject jsonObject5 = (JSONObject) jsonObject.get("percentageChange");
             JSONObject jsonObject6 = (JSONObject) jsonObject5.get("default");
-            jsonObject6.put(fieldTerm+ fieldName, 0);
+            jsonObject6.put(fieldTerm, 0);
 
             System.out.println(jsonObject);
 
@@ -94,15 +94,15 @@ public class Aggregations {
 
     public void averageAggregation(String fieldTerm, String fieldName, String outputFile) {
         SearchResponse searchResponse = CreateClient.getClient().prepareSearch().setQuery(QueryBuilders.matchAllQuery())
-                .setSize(0).addAggregation(AggregationBuilders.avg(fieldTerm + fieldName).field(fieldName)).execute().actionGet();
+                .setSize(0).addAggregation(AggregationBuilders.avg(fieldTerm).field(fieldName)).execute().actionGet();
         System.out.println(searchResponse.toString());
 
-        Avg agg = searchResponse.getAggregations().get(fieldTerm + fieldName);
+        Avg agg = searchResponse.getAggregations().get(fieldTerm);
 
         double actualValue = agg.getValue();
 
         //AssertionClass.test(actualValue,expectedValue);
-        this.builderJSON(fieldTerm, fieldName,actualValue, outputFile);
+        this.builderJSON(fieldTerm,actualValue, outputFile);
 
 
     }
@@ -124,25 +124,25 @@ public class Aggregations {
 //        SearchResponse searchResponse= CreateClient.getClient().prepareSearch(index,type).setSize(0).addAggregation()
 //    }
 
-    public void minimumAggregation(String fieldName, int expectedValue, String outputFile) {
-        SearchResponse searchResponse = CreateClient.getClient().prepareSearch().setSize(0)
-                .addAggregation(AggregationBuilders.min("Minimum_" + fieldName).field(fieldName)).execute().actionGet();
-
-
-        System.out.println(searchResponse.toString());
-//        }
-
-        Min agg = searchResponse.getAggregations().get("Minimum_" + fieldName);
-        double actualValue = agg.getValue();
-
-
-
-
-
-        this.builderJSON(fieldName,actualValue, outputFile);
-
-    }
-
+//    public void minimumAggregation(String fieldTerm, int expectedValue, String outputFile) {
+//        SearchResponse searchResponse = CreateClient.getClient().prepareSearch().setSize(0)
+//                .addAggregation(AggregationBuilders.min("Minimum_" + fieldName).field(fieldName)).execute().actionGet();
+//
+//
+//        System.out.println(searchResponse.toString());
+////        }
+//
+//        Min agg = searchResponse.getAggregations().get("Minimum_" + fieldName);
+//        double actualValue = agg.getValue();
+//
+//
+//
+//
+//
+//        this.builderJSON(fieldName,actualValue, outputFile);
+//
+//    }
+//
 
     public void maximumAggregation(String fieldName, int expectedValue) {
 
