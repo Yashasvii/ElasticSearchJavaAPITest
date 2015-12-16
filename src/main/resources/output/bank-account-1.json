@@ -1,19 +1,2 @@
-{
-  "took" : 2,
-  "timed_out" : false,
-  "_shards" : {
-    "total" : 10,
-    "successful" : 10,
-    "failed" : 0
-  },
-  "hits" : {
-    "total" : 2153,
-    "max_score" : 0.0,
-    "hits" : [ ]
-  },
-  "aggregations" : {
-    "min_age" : {
-      "value" : 20.0
-    }
-  }
-}
+{"raj":{"properties":{"age":{"type":"long"}}}}
+

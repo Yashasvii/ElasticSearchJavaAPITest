@@ -1,11 +1,101 @@
 {
-"user":"sam",
-"postDate":"2013-01-30",
-"message":"trying out Elasticsearch"
+  "comparison": {
+    "default": {
+      "Office": 1,
+      "OfficePMPM": 0,
+      "bhLTCPMPM": 5,
+      "inpatientBehaviouralClaimsPMPM": 0,
+      "homeHealthCarePMPM": 0,
+      "physicianMentalHealthPMPM": 0,
+      "subscribers": 0,
+      "physicianPhysicalPMPM": 0,
+      "memberMonths": 0,
+      "paymentReceived": 0,
+      "totalPharmacyPaidAmount": 0,
+      "totalPharmacyPaidAmountPMPM": 0,
+      "employeeMonths": 0,
+      "medLTCPMPM": 0,
+      "inpatientMedicalClaimsPMPM": 0,
+      "members": 0,
+      "Inpatient": 0,
+      "InpatientPMPM": 0,
+      "Outpatient": 0,
+      "OutpatientPMPM": 0,
+      "totalMedicalPaidAmount": 0,
+      "totalMedicalPaidAmountPMPM": 0,
+      "emergencyRoomPMPM": 0,
+      "outpatientHospitalPMPM": 0,
+      "othersPMPM": 0,
+      "totalHealthPlanClaimsPaid": 0,
+      "margin": 0,
+      "averageFamilySize": 0,
+      "totalHealthPlanClaimsPaidPMPM": 0
+    }
+  },
+  "reporting": {
+    "default": {
+      "Office": 0,
+      "OfficePMPM": 0,
+      "bhLTCPMPM": 0,
+      "inpatientBehaviouralClaimsPMPM": 0,
+      "homeHealthCarePMPM": 0,
+      "physicianMentalHealthPMPM": 0,
+      "subscribers": 0,
+      "physicianPhysicalPMPM": 0,
+      "memberMonths": 0,
+      "paymentReceived": 0,
+      "totalPharmacyPaidAmount": 0,
+      "totalPharmacyPaidAmountPMPM": 0,
+      "employeeMonths": 0,
+      "medLTCPMPM": 0,
+      "inpatientMedicalClaimsPMPM": 0,
+      "members": 0,
+      "Inpatient": 0,
+      "InpatientPMPM": 0,
+      "Outpatient": 0,
+      "OutpatientPMPM": 0,
+      "totalMedicalPaidAmount": 0,
+      "totalMedicalPaidAmountPMPM": 0,
+      "emergencyRoomPMPM": 0,
+      "outpatientHospitalPMPM": 0,
+      "othersPMPM": 0,
+      "totalHealthPlanClaimsPaid": 0,
+      "margin": 0,
+      "averageFamilySize": 0,
+      "totalHealthPlanClaimsPaidPMPM": 0
+    }
+  },
+  "percentageChange": {
+    "default": {
+      "Office": 0,
+      "OfficePMPM": 0,
+      "bhLTCPMPM": 0,
+      "inpatientBehaviouralClaimsPMPM": 0,
+      "homeHealthCarePMPM": 0,
+      "physicianMentalHealthPMPM": 0,
+      "subscribers": 0,
+      "physicianPhysicalPMPM": 0,
+      "memberMonths": 0,
+      "paymentReceived": 0,
+      "totalPharmacyPaidAmount": 0,
+      "totalPharmacyPaidAmountPMPM": 0,
+      "employeeMonths": 0,
+      "medLTCPMPM": 0,
+      "inpatientMedicalClaimsPMPM": 0,
+      "members": 0,
+      "Inpatient": 0,
+      "InpatientPMPM": 0,
+      "Outpatient": 0,
+      "OutpatientPMPM": 0,
+      "totalMedicalPaidAmount": 0,
+      "totalMedicalPaidAmountPMPM": 0,
+      "emergencyRoomPMPM": 0,
+      "outpatientHospitalPMPM": 0,
+      "othersPMPM": 0,
+      "totalHealthPlanClaimsPaid": 0,
+      "margin": 0,
+      "averageFamilySize": 0,
+      "totalHealthPlanClaimsPaidPMPM": 0
+    }
+  }
 }
-
-
-
-
-
-

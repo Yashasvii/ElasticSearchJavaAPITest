@@ -1,8 +1,11 @@
+
+import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
 import org.elasticsearch.action.bulk.BulkItemRequest;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.common.io.ByteStreams;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -13,7 +16,7 @@ import java.util.logging.Level;
  * Created by yrpant on 12/14/15.
  */
 public class BulkProcessing {
-    private void bulkOperationIndexing(String index, String type,List<JSONObject> jsonList) {
+    private void bulkOperationIndexing(String index, String type, List<JSONObject> jsonList) {
 
         BulkRequestBuilder bulkRequestBuilder = CreateClient.getClient().prepareBulk();
         int i = 0;
@@ -32,10 +35,10 @@ public class BulkProcessing {
         }
     }
 
-    public void bulkRandomDataInsertion(String index,String type, int maxSize)
-    {
+    public void bulkRandomDataInsertion(String index, String type, int maxSize) {
 
         /* Bulk API test */
+
 
         try {
             RandomDataGenerator randomDataGenerator = new RandomDataGenerator();
@@ -43,14 +46,15 @@ public class BulkProcessing {
             for (int i = 0; i < maxSize; i++) {
                 data.add(i, randomDataGenerator.jsonData());
             }
-            BulkProcessing bulkProcessing= new BulkProcessing();
+            BulkProcessing bulkProcessing = new BulkProcessing();
 
-            bulkProcessing.bulkOperationIndexing(index,type,data);
+            bulkProcessing.bulkOperationIndexing(index, type, data);
         } catch (Exception ex) {
             System.out.println(ex.toString());
         }
-
     }
+
+
 
     public void loadBulk(String index, String type, String fileName) {
 //        System.out.println(String.format("Loading file %s into elasticsearch cluster", jsonPath));
@@ -65,5 +69,11 @@ public class BulkProcessing {
             System.out.println(e.toString());
         }
 
+    }
+
+    private boolean checkIndex(String indexName) {
+        IndicesExistsResponse res = CreateClient.getClient().admin().indices().prepareExists(indexName).execute().actionGet();
+        if (res.isExists()) return true;
+        return false;
     }
 }

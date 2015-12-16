@@ -1,4 +1,10 @@
 
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsRequest;
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
+import org.elasticsearch.cluster.metadata.MappingMetaData;
+import org.elasticsearch.common.collect.ImmutableOpenMap;
+import org.elasticsearch.common.hppc.cursors.ObjectObjectCursor;
+
 import java.util.logging.Logger;
 
 
@@ -16,8 +22,8 @@ public class Main {
 //       MapIndex mapIndex= new MapIndex();
 //        mapIndex.mapIndex("zz1","location","mapping.json");
 //
-//        GetContent getContent = new GetContent();
-//       getContent.getContent("bank", "account", "1");
+//  GetContent getContent = new GetContent();
+//     getContent.getContent("bank", "account", "2");
 
 //        IndexDocument indexDocument= new IndexDocument();
 //        indexDocument.indexDocument("tt","aa","5","indexdocument.json");
@@ -42,26 +48,37 @@ public class Main {
 //        GetCount getCount= new GetCount();
 //        getCount.getCount("contactmanager","people");
 
-//            BulkProcessing bulkProcessing= new BulkProcessing();
-//        bulkProcessing.bulkRandomDataInsertion("zzz","aa",50);
-
+//BulkProcessing bulkProcessing= new BulkProcessing();
+// bulkProcessing.bulkRandomDataInsertion("contactmanager","aa",50);
 //
-//            Aggregations aggregations= new Aggregations();
-//            aggregations.aggregationsImplementation();
-
+////
+ Aggregations aggregations= new Aggregations();
+ //aggregations.aggregationsImplementation();
+////
 //       Delete delete= new Delete();
 //        delete.deleteByQueryResponse("contactmanager","people");
 //    }
 
-        Aggregations aggregations = new Aggregations();
-    // aggregations.aggregationsImplementation();
-     // aggregations.averageAggregation("age",20);
-  //    aggregations.minimumAggregation("age",20);
-       aggregations.maximumAggregation("age",70);
+
+  //  aggregations.aggregationsImplementation();
+
+   aggregations.averageAggregation("age","observer1.json");
+// //aggregations.averageAggregation("contactmanager","age",20);
+
+
+      aggregations.minimumAggregation("age",25,"observer1.json");
+
+
+     //  aggregations.maximumAggregation("age",70);
+
+
 
 
 //        BulkProcessing bulkProcessing= new BulkProcessing();
-//        bulkProcessing.loadBulk("ban","account","accounts.json");
+//        bulkProcessing.loadBulk("banl1","account","accounts.json");
+
+//        CompareJSON.compareJSON();
+
 
 
 

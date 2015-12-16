@@ -1,3 +1,7 @@
+import org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse;
+import org.elasticsearch.cluster.metadata.MappingMetaData;
+import org.elasticsearch.common.collect.ImmutableOpenMap;
+import org.elasticsearch.common.hppc.cursors.ObjectObjectCursor;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
@@ -16,7 +20,7 @@ public class MapIndex {
     public void mapIndex(String index, String type, String fileName) {
         try {
             JSONParser jsonParser = new JSONParser();
-            FileReader fileReader = new FileReader("src/main/resources/input/"+fileName);
+            FileReader fileReader = new FileReader("src/main/resources/input/" + fileName);
             JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
             String jsonMap = jsonObject.toString();
             fileReader.close();
@@ -51,4 +55,29 @@ public class MapIndex {
         if (res.isExists()) return true;
         return false;
     }
-}
+
+
+
+    public JSONObject getMapping(String index, String type) {
+
+        try {
+
+            GetMappingsResponse res = CreateClient.getClient().admin().indices()
+                    .prepareGetMappings().setTypes().execute()
+                    .actionGet();
+            MappingMetaData mappingMetaData = res.getMappings().get(index).get(type);
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(mappingMetaData.source().toString());
+            return  jsonObject;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
+
+         return null;
+
+
+        }
+    }
+

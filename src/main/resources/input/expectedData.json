@@ -1,9 +1,9 @@
 {
   "comparison": {
     "default": {
-      "Office": 1,
+      "Office": 0,
       "OfficePMPM": 0,
-      "bhLTCPMPM": 5,
+      "bhLTCPMPM": 0,
       "inpatientBehaviouralClaimsPMPM": 0,
       "homeHealthCarePMPM": 0,
       "physicianMentalHealthPMPM": 0,

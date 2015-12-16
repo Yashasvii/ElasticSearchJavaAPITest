@@ -1,0 +1,17 @@
+{
+  "comparison" : {
+    "default" : {
+      "Average_age" : 20.0
+    }
+  },
+  "percentageChange" : {
+    "default" : {
+      "Average_age" : 0
+    }
+  },
+  "reporting" : {
+    "default" : {
+      "Average_age" : 20.0
+    }
+  }
+}
