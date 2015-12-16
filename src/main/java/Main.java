@@ -54,18 +54,16 @@ public class Main {
 //    }
 
         Aggregations aggregations = new Aggregations();
-//       // aggregations.aggregationsImplementation();
-//        //aggregations.averageAggregation();
-        aggregations.minimumAggregation("age",20);
+    // aggregations.aggregationsImplementation();
+     // aggregations.averageAggregation("age",20);
+  //    aggregations.minimumAggregation("age",20);
+       aggregations.maximumAggregation("age",70);
 
 
 //        BulkProcessing bulkProcessing= new BulkProcessing();
 //        bulkProcessing.loadBulk("ban","account","accounts.json");
 
 
-        // get a number in the first argument
-//       AssertionClass assertionClass= new AssertionClass();
-//       assertionClass.test();
 
     }
 }

@@ -3,7 +3,7 @@
  */
 public class AssertionClass {
 
-    public static void test(int observedValue, int expectedValue)
+    public static void test(double observedValue, double expectedValue)
     {
 
 
